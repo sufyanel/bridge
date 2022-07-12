@@ -1,7 +1,7 @@
 dealer =
 x = 1
 Boards = []
-number_of_boards = int(input("Howmanyboardswouldyouliketoplay?))
+number_of_boards = int(input("How many boards would you like to play?))
 Boards.extend(range(1, number_of_boards+1))
 
 # forxinBoards:
@@ -88,7 +88,7 @@ Cards.extend(range(1, 53))
 rand_cards = sample(Cards, 52) 
 
 
-# Selectandsortthehands
+# Select and sort the hands
 dealer_cards = rand_cards[0:13]
 dealer_cards.sort(reverse=True)
 
