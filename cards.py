@@ -6,8 +6,7 @@ SUITS = {"c": "Clubs",
          "h": "Hearts",
          "s": "Spades"}
 
-RANKS = {1: "Ace",
-         2: "Two",
+RANKS = {2: "Two",
          3: "Three",
          4: "Four",
          5: "Five",
@@ -18,11 +17,14 @@ RANKS = {1: "Ace",
          10: "Ten",
          11: "Jack",
          12: "Queen",
-         13: "King"}
+         13: "King",
+         14: "Ace"}
 
 class Stack:
     '''A stack of cards'''
-    cards = []
+
+    def __init__(self):
+        self.cards = []
 
     def __str__(self):
         '''Returns string of all cards in the stack, by complete name'''
@@ -33,7 +35,7 @@ class Stack:
 
     def shuffle(self):
         '''Shuffles the stack'''
-        self.cards = sample(self.cards, 52)
+        self.cards = sample(self.cards, len(self.cards))
 
     def sort(self):
         '''Sorts cards in the stack'''
@@ -47,15 +49,9 @@ class Deck(Stack):
 
     def __init__(self) -> None:
         '''Initializing all 52 cards'''
+        super().__init__()
+
         for suit in SUITS.keys():
             for rank in RANKS.keys():
                 self.cards.append((suit, rank))
 
-
-def main():
-    deck = Deck()
-    print(deck) 
-
-
-if __name__ == '__main__':
-    main()
