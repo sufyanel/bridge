@@ -1,82 +1,83 @@
-dealer =
-x = 1
+dealer = x = 1
 Boards = []
 number_of_boards = int(input("How many boards would you like to play?))
 Boards.extend(range(1, number_of_boards+1))
 
-# forxinBoards:
-whilex < number_of_boards+1:
-print()
-print("BoardNumber:", x)
-if(x % 16) == 1:
-dealer = N
-vul = None
-if(x % 16) == 2:
-dealer = E
-vul = NS
-if(x % 16) == 3:
-dealer = S
-vul = EW
-if(x % 16) == 4:
-dealer = W
-vul = Both
-if(x % 16) == 5:
-dealer = N
-vul = NS
-if(x % 16) == 6:
-dealer = E
-vul = EW
-if(x % 16) == 7:
-dealer = S
-vul = Both
-if(x % 16) == 8:
-dealer = W
-vul = None
-if(x % 16) == 9:
-dealer = N
-vul = EW
-if(x % 16) == 10:
-dealer = E
-vul = Both
-if(x % 16) == 11:
-dealer = S
-vul = None
-if(x % 16) == 12:
-dealer = W
-vul = NS
-if(x % 16) == 13:
-dealer = N
-vul = Both
-if(x % 16) == 14:
-dealer = E
-vul = None
-if(x % 16) == 15:
-dealer = S
-vul = NS
-if(x % 16) == 0:
-dealer = W
-vul = EW
-# print("Dealer:",dealer,Vulnerability:,vul)
+# for x in Boards:
+while x < number_of_boards+1:
 
-# defpositions(/dealer):
-ifdealer == N:
-second = E
-third = S
-fourth = W
-ifdealer == E:
-second = S
-third = W
-fourth = N
-ifdealer == S:
-second = W
-third = N
-fourth = E
-ifdealer == W:
-second = N
-third = E
-fourth = S
+    print()
+    print("BoardNumber:", x)
 
-fromrandomimportsample
+    if(x % 16) == 1:
+        dealer = N
+        vul = None
+    if(x % 16) == 2:
+        dealer = E
+        vul = NS
+    if(x % 16) == 3:
+        dealer = S
+        vul = EW
+    if(x % 16) == 4:
+        dealer = W
+        vul = Both
+    if(x % 16) == 5:
+        dealer = N
+        vul = NS
+    if(x % 16) == 6:
+        dealer = E
+        vul = EW
+    if(x % 16) == 7:
+        dealer = S
+        vul = Both
+    if(x % 16) == 8:
+        dealer = W
+        vul = None
+    if(x % 16) == 9:
+        dealer = N
+        vul = EW
+    if(x % 16) == 10:
+        dealer = E
+        vul = Both
+    if(x % 16) == 11:
+        dealer = S
+        vul = None
+    if(x % 16) == 12:
+        dealer = W
+        vul = NS
+    if(x % 16) == 13:
+        dealer = N
+        vul = Both
+    if(x % 16) == 14:
+        dealer = E
+        vul = None
+    if(x % 16) == 15:
+        dealer = S
+        vul = NS
+    if(x % 16) == 0:
+        dealer = W
+        vul = EW
+    # print("Dealer:",dealer,Vulnerability:,vul)
+
+    # def positions(/dealer):
+    if dealer == N:
+        second = E
+        third = S
+        fourth = W
+    if dealer == E:
+        second = S
+        third = W
+        fourth = N
+    if dealer == S:
+        second = W
+        third = N
+        fourth = E
+    if dealer == W:
+        second = N
+        third = E
+        fourth = S
+
+from random import sample
 
 # Createemptylists
 Cards = []
@@ -110,7 +111,7 @@ card_dict = {52: AS',51:KS', 50: QS',49:JS', 48: TS',47:9S',
 
 print()
 print(dealer+: )
-forcindealer_cards:
+for c in dealer_cards:
 print(card_dict.get(c), end=",)
 print()
 
