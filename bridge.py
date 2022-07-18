@@ -34,7 +34,7 @@ and then measure the result (tricks taken) against the number of tricks required
 '''
 
 
-class Game:
+class Game: # board 
 
     # A deck first, with all 52 cards
     deck = cards.Deck()
