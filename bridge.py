@@ -1,4 +1,5 @@
 import cards as cards
+import re
 
 '''
 Starting with the dealer and proceeding clockwise around the table, 
@@ -34,78 +35,152 @@ and then measure the result (tricks taken) against the number of tricks required
 '''
 
 
-class Game: # board 
+class Player:
+
+    def __init__(self,p_position):
+        self.suit1 = None
+        self.stack = cards.Stack()
+        self.position = p_position
+
+    def __str__(self):
+        return self.position
+
+
+    def play(self,players,co):
+        # Input card
+        print(co)
+        card = players[self.position].stack.cards
+        print(str(players[self.position])+" You have these cards.")
+        print(card)
+        player_card = input("Please enter your card "+str(players[self.position])+":")
+        # Check Legality :
+        digit = re.findall(r'\d+', player_card)
+        player_card = (player_card[0], int(digit[0]))
+        if co == 0:
+            f = open("suit.txt", "w")
+            f.write(player_card[0])
+            f.close()
+
+        f = open("suit.txt", "r")
+        self.suit1 = f.read()
+        if self.position != 0:
+            # * Follow the suit/ or trump
+            if self.suit1 != player_card[0]:
+                # if illegal, ask to make a valid move
+                print("Please enter a valid card.")
+                self.play(players,co)
+        # returns the card
+        return player_card
+
+
+
+
+
+
+
+
+
+class Board:
 
     # A deck first, with all 52 cards
     deck = cards.Deck()
 
-    # Creating stacks of cards for each of the four hand positions
-    north, east, west, south = (cards.Stack() for i in range(4))
+    # Creating four players
+    players = []
+    players.append(Player('North'))
+    players.append(Player('East'))
+    players.append(Player('South'))
+    players.append(Player('West'))
 
-    # replace hands(stack) with a class called player which has to have play method, choosing leader and is_leader, having name or description. 
-    HANDS = [north, east, west, south]
-    TEAMS = [(north, south), (east, west)]
-
-    def check_legality(self): 
-        # check card against 
-        # leader's suite 
-        # contract.denomination for trump 
-
-    class Player: 
-
-        def play(self):
- 
-                # Input card 
-                # play the card - pop from player.cards.pop > curent_trick 
-                # Check Legality :
-                # * Follow the suit/ or trump
-                # if illegal, ask to make a valid move 
-                # returns the card 
 
     class Trick:
         def __init__(self) -> None:
+            self.leader = 0
             self.stack = cards.Stack()
-            
-        def compute_winner(self): 
-            # self.winner = player 
+
+        def compute_winner(self,trick):
             # * highest or trump wins
-            pass 
+            winner = max(trick.stack.cards)
+            return winner
 
-        def get_winner(self): 
-            return self.winner 
 
-        def set_leader(self): 
+        def set_leader(self, player_num):
             #  Winner is the leader
+            f = open("leader.txt", "w")
+            f.write(str(player_num))
+            f.close()
 
-        def play(self): 
+        def play(self,players,trick):
             # take turns starting with leader,  clockwise
-                # player.play()
-                # trick.compute_winner ()
-                # trick.set_leader ()
 
-    tricks = (Trick() for i in range(13))
 
-    def choose_leader(self):
-        # Selecting a leader
-        while True:
-            leader = int(input("Please nominate a leader: 0 North, 1 East, 2 West, 3 South: \n"))
-            if leader not in [0,1,2,3]:
-                print("Sorry, please enter the digit for the desired player.")
-                continue
-            else:
-                break
-        print(self.HANDS[leader]," is the leader")
+            f = open("leader.txt", "r")
+            self.leader = f.read()
+            turn = int(self.leader)
+            for i in range(4):
+                # leader takes the first turn
+                card_played = Player(turn).play(players,i)
+                # play the card - pop from player.cards.pop > curent_trick
+                card = players[i].stack.cards
+                input_card = [i for i in card if card_played == i]
+                print("--input card--")
+                print(input_card)
+                if input_card:
+                    card.remove(input_card[0])
+                    trick.stack.cards.append(input_card[0])
+                    print(trick.stack.cards)
+                if i == 3:
+                   print(trick.stack.cards)
+                   winner = self.compute_winner(trick)
+                   winner_index = trick.stack.cards.index(winner)
+                   self.set_leader(winner_index)
+                   print(str(players[winner_index]) + " Wins the Trick\n Now he is leader.")
+                # moving turn to next player
+                turn = turn + 1
+                if turn > 3:
+                    turn = 0
+
+            # trick.set_leader ()
+
+
+    # Generating 13 tricks
+    tricks = []
+    for i in range(13):
+        tricks.append(Trick())
+
+    def check_legality(self):
+        # check card against 
+        # leader's suite 
+        # contract.denomination for trump
+        pass
+
+    # def choose_leader(self):
+    #     # Selecting a leader
+    #     while True:
+    #         leader = int(input("Please nominate a leader: \n"+self.players))
+    #         if leader not in [0,1,2,3]:
+    #             print("Sorry, please enter the digit for the desired player.")
+    #             continue
+    #         else:
+    #             break
 
     def deal(self):
         '''shuffle and distribute the cards amongst players'''
         # shuffle the cards
         self.deck.shuffle()
         # distribute cards amongst all players
-        for hand in self.HANDS:
+        for player in self.players:
             for i in range(13):
                 card = self.deck.cards.pop()
-                hand.cards.append(card)
-            hand.sort()
+                player.stack.cards.append(card)
+            player.stack.cards.sort()
+            # print(player)
+
+
+        # player = Player
+        # player.players(hand)
+
+
 
     def auction(self):
         # players take turns to bid
@@ -126,32 +201,30 @@ class Game: # board
 
     def play(self):
         '''Players taking turns through the tricks'''
-        # loop through tricks (list of card stacks)
-        # play each trick (trick.play 
-
+        # loop through tricks
+        # print(self.player)
 
         for trick in self.tricks:
-            for hand in self.HANDS:
-                hand.play()
-
+            # play each trick
+            trick.play(self.players,trick)
 
 def main():
 
     # Getting the number of boards
-    boards = []
+    # boards = []
     # number_of_boards = int(input("How many boards would you like to play?"))
     # boards.extend(range(1, number_of_boards+1))
-    for board in boards:
-        pass
+    # for board in boards:
+    #     pass
         # deal
         # create hands, teams , move from deck to hands ,
 
         # playing boards, one by one
 
-    game = Game()
-    game.deal()
-    game.choose_leader()
-
+    board = Board()
+    board.deal()
+    # board.choose_leader()
+    board.play()
 
 if __name__ == '__main__':
     main()
