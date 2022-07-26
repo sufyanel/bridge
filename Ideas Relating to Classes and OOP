@@ -1,0 +1,62 @@
+Thinking about the elements of bridge:
+
+We (PLAYERS) walk into the club (HOST WEBSITE) to prepare to enjoy an afternoon of friendly and intellectually stimulating structured competition.
+
+PLAYERS form themselves voluntarily into pairs (PARTNERSHIPS). Or if extra players exist, they can be paired up by assignment or encouraging choice.
+
+Depending on the number of PARTNERSHIPS (divided by 2) TABLES are formed. At any TABLE, North South (NS) compete as PARTNERS against East West (EW) as partners.
+
+A BOARD consists of all 52 CARDS distributed randomly to each of four PLAYERS joined with the results of the AUCTION period wherein a CONTRACT is reached and a DECLARER determined and the PLAY period wherein each of the 13 CARDS distributed to a PLAYER is contributed one by one to each of 13 TRICKS.  Four PLAYERS play one CARD each to a TRICK.
+
+The competition is divided into an arbitrary, predetermined number of ROUNDS each of which is an arbitrary, predetermined number of BOARDS in which one particular NS PARTNERSHIP competes against one particular EW PARTNERSHIP for an arbitrary (predetermined) number of BOARDS.
+
+Each table uses the same distribution of the 52 cards to the same positions to obtain a raw result (SCORE) for each BOARD.
+
+The SCORE is calculated against the CONTRACT as the sum of the "trick score" or "undertricks" and "bonus" for the BOARD.  More commonly, the SCORE is simply looked up in a comprehensive table (file, not a TABLE) setting forth all possible SCORES for the results for the offense and defense under all possible conditions.
+
+A deal is dealt by a DEALER whose position is arbitrarily, externally assigned. The DEALER on BOARD 1 is N, the DEALER on BOARD 2 is E, the DEALER on BOARD 3, is S with the DEALER role proceeding clockwise around the table. The position of the DEALER and the vulnerabilities applicable to each board yields an array of 16 possible positions/vulnerabilities (4x4 matrix).
+
+Once the CARDS are dealt (randomly assigned) the DEALER begins the auction period by either passing (PASS) or bidding 1 or more but not more than 7 (a LEVEL) of any denomination: Clubs, Diamonds, Hearts, Spades or No Trump (a DENOMINATION). The various suits are ranked (in alphabetical order in English) Clubs, Diamonds, Hearts, Spades and No Trumps which is not in alphabetical order but outranks all the suits.
+
+Each PLAYER'S action during the auction period is termed a CALL. CALLS are further divided into BIDS (LEVEL + DENOMINATION), and in addition PASS, double and redouble (doubles are conventionally represented by "x" and redoubles by "xx").
+
+Any PLAYER'S BID is only legal if it is in a higher ranking DENOMINATION at the same (or a higher) LEVEL. A call at a higher LEVEL it may be in any DENOMINATION.
+
+Any PLAYER may choose to PASS at his turn to CALL. 
+
+If the opposing side is the last to have made a BID, either PARTNER of the other side may choose to double (but a PLAYER may not double his PARTNER'S double).
+
+If the opposing side has made a double as the last action other than pass (x - p - p . . .  or x . . . ) a PLAYER may choose to redouble (but a PLAYER may not redouble his PARTNER'S redouble or double).
+
+For the initial cycle of bidding, if all four PLAYERS PASS, the BOARD is concluded (and play proceeds to the next BOARD). 
+
+After all four PLAYERS have had at least one turn to call, the AUCTION period is ended by any three consecutive PASSES (for example, PASS - PASS - PASS - PASS, or 1 heart - PASS - PASS - PASS but not PASS - PASS - PASS . . . The fourth PLAYER gets at least one turn to act).
+
+When the AUCTION period concludes (three consecutive PLAYERS have PASSED) the LEVEL and DENOMINATION of the final BID becomes the CONTRACT and the partnership that made the last bid becomes the declaring side (or offense). 
+
+If the final CALL is double, the CONTRACT is the final BID doubled (stakes are higher) and if the final CALL is redouble (again stakes are raised) the CONTRACT is the final BID redoubled.
+
+The PLAYER on the declaring side who first BID the DENOMINATION of the CONTRACT is assigned the role of DECLARER.
+
+The PLAYER to the immediate left of the DECLARER is the opening leader (LEADER).
+
+The DECLARER may choose to play any card from any suit as the opening lead.
+
+Each PLAYER must play a CARD of the SUIT led, if he has one. If he is void of that suit, he may play any CARD of any SUIT. The play of four CARDS, one by each player, constitutes a TRICK.
+
+If there is a TRUMP suit, the highest TRUMP CARD legally played is the winner of the TRICK. If the denomination is No Trumps, or if no CARD from the TRUMP suit has been played, the highest card of the SUIT led is the winner of the TRICK.
+
+The PLAYER that played the CARD that is the winner of the TRICK, is the LEADER for the next trick and this process continues until all 13 CARDS have been played by each PLAYER. 
+
+The BOARD is then completed, TRICKS won by each side are counted, a SCORE is calculated.
+
+A RESULT is determined by comparing the CONTRACT and TRICKS taken at this TABLE with all other TABLES. The method of calculating a RESULT may be any one of several choices and the determination of which choice is used is determined by an arbitrary, externally imported decision.
+
+The next BOARD is DEALT, an AUCTION ensues and the PLAY concludes repeating the above steps.
+
+Once an arbitrary (pre-determined, externally supplied) number of BOARDs have been played, the ROUND is completed and all the PLAYERS move to new TABLES and continue to compete but with new opposing PLAYERS.
+
+When an arbitrary (pre-determined, externally supplied) number of ROUNDs have been played the SESSION is completed. If there will be more than one SESSION, the process repeats for each SESSION.
+
+Once all the SESSIONS (which may be only one SESSION) have been completed the winners (and following placements (second, third, etc.)) of the EVENT are determined, reported and recorded. 
+

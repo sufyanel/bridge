@@ -9,6 +9,7 @@ while x < number_of_boards+1:
     print()
     print("BoardNumber:", x)
 
+    # selection of dealer 
     if(x % 16) == 1:
         dealer = N
         vul = None
@@ -59,6 +60,7 @@ while x < number_of_boards+1:
         vul = EW
     # print("Dealer:",dealer,Vulnerability:,vul)
 
+    # assigning positions to players 
     # def positions(/dealer):
     if dealer == N:
         second = E
